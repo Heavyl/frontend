@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import callStrapi from "@/app/lib/callStrapi";
+import callStrapi from "@/lib/callStrapi";
 
 export async function GET(req) {
   const { ok, status, json } = await callStrapi(`/api/games`);

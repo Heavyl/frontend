@@ -1,4 +1,4 @@
-import GameList from '@/app/components/games/GameList';
+import GameList from '@/components/games/GameList';
 
 export default function Games() {
 

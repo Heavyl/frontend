@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import callStrapi from "@/app/lib/callStrapi";
+import callStrapi from "@/lib/callStrapi";
 
 export async function GET(req, { params }) {
   const { id } = params;
