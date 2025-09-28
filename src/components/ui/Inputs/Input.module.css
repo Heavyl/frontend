@@ -1,0 +1,10 @@
+.input{
+  border : var(--border-style);
+  border-radius: var(--border-radius);
+  padding: var(--input-padding);
+  width: clamp(10rem, 100%, 30rem);
+}
+
+.primary{
+    background: rgba(255, 255, 255, 0.1);
+}
