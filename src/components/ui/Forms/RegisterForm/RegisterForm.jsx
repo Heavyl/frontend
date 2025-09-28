@@ -35,7 +35,7 @@ export default function RegisterForm() {
         }
     }
     useEffect(() => {
-        function validate() {
+        function validatePassword() {
 
 			if(!password){
 				setMessage("");
@@ -54,7 +54,7 @@ export default function RegisterForm() {
 				setDisabled(false);
 			}
           }
-		  validate();
+		  validatePassword();
 
     },[password, repeatPassword])
 
