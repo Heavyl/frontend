@@ -12,6 +12,8 @@ function CharacterList() {
       try {
         const res = await fetch('/api/characters');
         const data = await res.json();
+        
+        console.log(data)
 
         setCharacters(data) ;
       } catch (err) {

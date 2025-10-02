@@ -1,7 +1,10 @@
-import LoginForm from '@/components/ui/Forms/LoginForm/LoginForm'
+import LoginForm from '@/components/Forms/LoginForm/LoginForm'
 
 export default function Login() {
 
-  return <LoginForm  />
-    
+  return (
+    <div className="full-screen flex flex-col justify-center items-center">
+    <LoginForm  />
+    </div>
+  ) 
 }

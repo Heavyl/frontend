@@ -1,4 +1,4 @@
-import styles from '@/components/ui/Forms/Form.module.css';
+import styles from '@/components/Forms/Form.module.css';
 
 export default function Form({ children, onSubmit }) {
   return (

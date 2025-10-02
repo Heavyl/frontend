@@ -1,0 +1,8 @@
+.navList{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.navItem{
+    text-transform: uppercase;
+}

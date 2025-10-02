@@ -1,4 +1,4 @@
-const STRAPI_URL = process.env.STRAPI_URL;           // ex: http://localhost:1337
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;           // ex: http://localhost:1337
 const STRAPI_TOKEN = process.env.FULL_ACCESS_TOKEN;  // secret, serveur uniquement
 
 async function callStrapi(path, token = STRAPI_TOKEN, options = {}) {

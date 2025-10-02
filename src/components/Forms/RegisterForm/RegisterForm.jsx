@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Form from "@/components/ui/Forms/Form";
+import Form from "@/components/Forms/Form";
 import Button from "@/components/ui/Buttons/Button";
 import Input from "@/components/ui/Inputs/Input";
+import Title from "@/components/ui/Titles/Title";
+import Message from "@/components/Forms/Message/Message";
 
 export default function RegisterForm() {
     const [email, setEmail] = useState("");
@@ -42,15 +44,15 @@ export default function RegisterForm() {
 				setDisabled(true);
 			}
             if(password !== repeatPassword) {
-                setMessage("Les mots de passe ne correspondent pas");
+                setMessage("Passwords do not match");
                	setDisabled(true);
             }
 			if(password && password.length < 6) {
-				setMessage("Le mot de passe doit contenir au moins 6 caractères");
+				setMessage("Password must be at least 6 characters");
 				setDisabled(true);
 			}
 			if(password && password === repeatPassword && password.length >= 6) {
-				setMessage("Ready to go :)");
+				setMessage("Looks like you're ready to go :)");
 				setDisabled(false);
 			}
           }
@@ -59,13 +61,16 @@ export default function RegisterForm() {
     },[password, repeatPassword])
 
   return (
-    <Form onSubmit={handleRegister}>
-      <Input name="pseudo"placeholder="Pseudo" value={pseudo} onChange={(e) => setPseudo(e.target.value)} />
-      <Input name="email" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <Input name="password" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <Input name="repeat password" placeholder="Repeat password" type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
-      <Button type="submit" disabled={disabled}>S’inscrire</Button>
-      <p>{message}</p>
-    </Form>
+    <div className="full-screen flex flex-col justify-center">
+        <Title heading="h1" className="text-center">Register</Title>
+        <Form onSubmit={handleRegister}>
+            <Input name="pseudo"placeholder="Pseudo" value={pseudo} onChange={(e) => setPseudo(e.target.value)} />
+            <Input name="email" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Input name="password" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Input name="repeat password" placeholder="Repeat password" type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
+            <Button type="submit" disabled={disabled}>S’inscrire</Button>
+            <Message>{message}</Message>
+        </Form>
+    </div>
   );
 }
