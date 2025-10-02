@@ -3,11 +3,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 import Form from "@/components/Forms/Form";
 import Input from "@/components/ui/Inputs/Input";
 import Button from "@/components/ui/Buttons/Button";
 import Title from "@/components/ui/Titles/Title";
 import Message from "../Message/Message";
+import useAuth from '@/hooks/useAuth';
 
 
 export default function LoginForm() {
@@ -15,28 +17,24 @@ export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    
+    const auth = useAuth();
     const router = useRouter();
 
     async function handleLogin(e) {
-        e.preventDefault();
+        e.preventDefault(); 
+        setMessage("");     
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/local`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ identifier: email, password }),
-            });
-
-            const data = await res.json();
-            if (data.jwt) {
-                localStorage.setItem("token", data.jwt);
-                setMessage("Connexion réussie !");
-                router.push("/profile"); // redirection vers le profil
+            const success = await auth.login(email, password); 
+            if (success) {
+                router.push("/profile"); 
             } else {
-                setMessage("Erreur : " + JSON.stringify(data));
+                setMessage("Email ou mot de passe incorrect");
             }
-            } catch (err) {
-            setMessage("Erreur serveur");
+        } catch (err) {
+            setMessage("Erreur lors de la connexion");
+            console.error(err);
         }
     }
 
