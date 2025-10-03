@@ -1,3 +1,16 @@
+.header{
+    position: fixed;
+    top: 0;
+    background-color: var(--dark-grey);
+    box-shadow: 1px 1px 10px black;
+    height: var(--menu-height);
+    width: 100vw;
+    padding: 0 clamp( 20px, 5%, 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .navList{
     display: flex;
     gap: 1rem;

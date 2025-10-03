@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <div>
-            <header >
+            <header className={styles.header}>
                 <div>DALF</div>
                 <nav>
                     <ul className={styles.navList}>

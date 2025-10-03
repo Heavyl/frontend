@@ -1,0 +1,8 @@
+.sidebar{
+    width: clamp(200px, 25%, 300px);
+    height:100vh;
+    padding: var(--content-padding);
+    background-color: var(--dark-grey);
+    box-shadow: inset -5px 5px 10px #0e0a0f;
+
+}

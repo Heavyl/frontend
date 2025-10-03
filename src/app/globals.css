@@ -2,11 +2,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground:var(--dark-grey);
+  --dark-grey: rgb(18, 12, 19);
 
   --border-radius : 20px;
   --border-style : 1px solid white;
   --input-padding : 10px 20px;
+
+  --menu-height: 4rem;
+
+  --content-padding: clamp(20px, 5%, 30px)
 }
 
 @theme inline {
@@ -18,37 +23,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1f1c20;
+    --background: var(--dark-grey);
     --foreground: #ededed;
   }
 }
 
 body {
-    
     background: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
 main{
-    padding : 50px;
+    margin-top: var(--menu-height);
 }
-
-.full-screen {
-    width: 100vw;
-    height: 100vh;
+.content{
+    width: 100%;
+    padding: var(--content-padding);
+    background-color: var(--dark-grey);
 }
-
 h1{ 
     font-size: 3.5rem; 
     font-weight: bold; 
     margin-bottom: 1rem; 
-}
-header{
-    background-color: #171717;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position:fixed;
-    width:100vw;
 }
