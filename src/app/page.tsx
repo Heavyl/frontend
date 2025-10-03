@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { io } from "socket.io-client";
 import CharacterList from '@/components/characters/CharacterList'

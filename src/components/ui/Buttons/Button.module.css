@@ -10,3 +10,9 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+.logout{
+    padding: 0 5px;
+    border-radius:30px;
+    border:none;
+    background-color: var( --foreground);
+}
