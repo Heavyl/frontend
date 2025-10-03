@@ -7,7 +7,7 @@ export default function Profile() {
 
   return (
     <div className="flex">
-        <Sidebar>qsd</Sidebar>
+        <Sidebar></Sidebar>
         <div className="content">
             <Title heading="h1" className="text-center">Profile</Title> 
             <GameList/>

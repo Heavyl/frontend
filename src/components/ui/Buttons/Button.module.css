@@ -1,4 +1,7 @@
 .button{
+    cursor:pointer;
+}
+.submit{
     background-color: var(--foreground);
     border-radius: var(--border-radius);
     border : var(--border-style);
